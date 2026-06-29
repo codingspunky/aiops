@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+aiosqlite
+asyncpg
+pydantic
+pydantic-settings
+langgraph
+langchain-core
+openai
+python-multipart
