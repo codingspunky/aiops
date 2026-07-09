@@ -1,5 +1,11 @@
 from __future__ import annotations
 
+"""Main entry point for the AIOps Correlation Engine FastAPI application.
+
+Provides route definitions for health checks, data ingestion, and incident
+management. The FastAPI app is instantiated with a lifespan that initializes
+the database."""
+
 import csv
 import io
 from contextlib import asynccontextmanager
