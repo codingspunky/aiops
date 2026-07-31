@@ -1,6 +1,11 @@
 fastapi
-sqlalchemy
+uvicorn[standard]
+sqlalchemy[asyncio]
 aiosqlite
-greenlet
+asyncpg
 pydantic
 pydantic-settings
+langgraph
+langchain-core
+openai
+python-multipart
