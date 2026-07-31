@@ -1,3 +1,10 @@
+"""Database models and session configuration for the AIOPS alerting system.
+
+This module defines SQLAlchemy ORM models for raw alerts, normalized alerts,
+incidents, and root-cause analysis reports, along with the async database
+engine and session factory.
+"""
+
 from __future__ import annotations
 
 import datetime as dt
