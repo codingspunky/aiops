@@ -1,3 +1,11 @@
+"""Deduplication logic for alerts.
+
+This module provides functions to deduplicate incoming alerts based on their
+fingerprint and a configurable suppression window. If an alert with the same
+fingerprint has been seen within the suppression window and is still firing,
+it updates the existing alert's count and last_seen timestamp instead of
+creating a new alert.
+"""
 from __future__ import annotations
 
 import datetime as dt
