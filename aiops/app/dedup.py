@@ -1,3 +1,10 @@
+"""Alert deduplication module.
+
+Provides logic to suppress duplicate alerts that share the same fingerprint
+within a configurable suppression window. When a duplicate is detected, the
+existing alert's count and last_seen timestamp are updated instead of creating
+a new alert record.
+"""
 from __future__ import annotations
 
 import datetime as dt
