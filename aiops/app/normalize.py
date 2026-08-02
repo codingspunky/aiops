@@ -1,3 +1,9 @@
+"""Normalize heterogeneous alert payloads into a canonical representation.
+
+This module provides adapters that transform alerts from various sources
+(Prometheus Alertmanager, Grafana, CSV) into a unified :class:`~app.schemas.CanonicalAlert`
+format. It also computes stable fingerprints for deduplication.
+"""
 from __future__ import annotations
 
 import datetime as dt
