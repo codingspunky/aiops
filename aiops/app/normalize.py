@@ -1,3 +1,10 @@
+"""Normalize incoming alerts from various sources into a canonical format.
+
+This module provides adapters that convert alerts from Prometheus,
+Grafana, and CSV sources into `CanonicalAlert` objects with a stable
+fingerprint for deduplication.
+"""
+
 from __future__ import annotations
 
 import datetime as dt
