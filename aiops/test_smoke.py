@@ -38,3 +38,9 @@ def test_public_surface_is_intact(attr):
     """Guards against an edit that quietly drops a public name."""
     module = importlib.import_module("app.main")
     assert hasattr(module, attr), f"app.main no longer exports {attr!r}"
+
+
+def test_schemas_imports_and_exposes_alert_out():
+    """app.schemas imports cleanly and exposes AlertOut."""
+    module = importlib.import_module("app.schemas")
+    assert hasattr(module, "AlertOut"), "app.schemas no longer exports 'AlertOut'"
