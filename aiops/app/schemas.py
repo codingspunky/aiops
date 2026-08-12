@@ -3,7 +3,7 @@ from __future__ import annotations
 import datetime as dt
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class CanonicalAlert(BaseModel):
@@ -20,6 +20,8 @@ class CanonicalAlert(BaseModel):
 
 
 class AlertOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     fingerprint: str
     source: str
@@ -33,11 +35,10 @@ class AlertOut(BaseModel):
     count: int
     incident_id: int | None
 
-    class Config:
-        from_attributes = True
-
 
 class RCAOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     root_cause: str
     confidence: float
     contributing_factors: list[Any]
@@ -46,11 +47,10 @@ class RCAOut(BaseModel):
     model: str
     generated_at: dt.datetime
 
-    class Config:
-        from_attributes = True
-
 
 class IncidentOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     title: str
     status: str
@@ -60,9 +60,6 @@ class IncidentOut(BaseModel):
     updated_at: dt.datetime
     alerts: list[AlertOut] = []
     rca: RCAOut | None = None
-
-    class Config:
-        from_attributes = True
 
 
 class IngestResult(BaseModel):
